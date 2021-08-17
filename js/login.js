@@ -5,7 +5,7 @@ function verificar(){
 
     if(nomusdato.trim()==="" || conusdato.trim()===""){
 
-        document.getElementById("ingdat").innerHTML="Deve ingresar ambos datos";
+        document.getElementById("ingdat").innerHTML="Debe ingresar ambos datos";
     }else{
         
       location.href="index.html";
