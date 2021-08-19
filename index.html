@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <title>eMercado - Todo lo que busques está aquí</title>
     <script src="js/index.js"></script>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/btndesconectar.css">
 
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -18,14 +18,23 @@
   </head>
   <body>
     
-    <nav class="site-header sticky-top py-1 bg-dark">
+    <nav class="site-header sticky-top py-1 bg-dark" >
       <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <div id="usuarioconectado"></div>
         <button class="btndesconectar" onclick="desconectar()">Desconectar</button>
+       
+     <script>
+
+let usuario = JSON.parse(localStorage.getItem("usuario"));
+document.getElementById("usuarioconectado").innerHTML+="Bienvenido: "+usuario.nombre;
+
+     </script>
+     
       </div>
     </nav>
     <main role="main">
@@ -103,8 +112,7 @@
         <p class="float-right">
           <a href="#">Volver arriba</a>
         </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+        
       </div>
     </footer>
     <script src="js/jquery-3.4.1.min.js"></script>

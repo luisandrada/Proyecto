@@ -16,3 +16,12 @@ function verificar(){
 
     }
 }
+function presionar(){
+  tecla = event.keyCode;
+  if(tecla == 13){
+   verificar()
+ 
+  }
+ 
+ }
+ window.onkeydown = presionar;
