@@ -8,7 +8,7 @@ fetch (PRODUCTS_URL)
     <div class="list-group-item list-group-item-action">
         <div class="row">
             <div class="col-3">
-                <img src="` + vehiculos.imgSrc + `" alt="` + vehiculos.desc + `" class="img-thumbnail">
+                <img src="` + vehiculos.imgSrc + `" alt="` + `" class="img-thumbnail">
             </div>
             
             <div class="col">

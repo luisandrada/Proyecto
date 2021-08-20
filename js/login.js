@@ -25,3 +25,15 @@ function presionar(){
  
  }
  window.onkeydown = presionar;
+
+
+
+
+
+
+
+
+
+
+
+
