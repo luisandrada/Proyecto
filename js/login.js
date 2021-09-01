@@ -29,6 +29,25 @@ function presionar(){
 
 
 
+ function onSignIn(googleUser) {
+  // Useful data for your client-side scripts:
+  var profile = googleUser.getBasicProfile();
+  let usuario = {};
+  usuario.nombre = profile.getGivenName(); 
+  localStorage.setItem("usuario",JSON.stringify(usuario));
+
+
+  // The ID token you need to pass to your backend:
+  var id_token = googleUser.getAuthResponse().id_token;
+  console.log("ID Token: " + id_token);
+  location.href="index.html";
+}
+
+
+
+
+
+
 
 
 

@@ -74,9 +74,46 @@ document.getElementById("relevanciaalto").addEventListener("click",()=>{
 }
 
 );
+//
 
-    })
-   
+
+document.getElementById("nombreord1").addEventListener("click",()=>{
+    let vehiculos_ordenado_nombre = arrayproducto.sort((em1,em2)=>{
+       
+          if (em1.name > em2.name) {
+            return -1;
+          }
+          // a must be equal to b
+         
+        })
+    showProductsList(vehiculos_ordenado_nombre);
+}
+
+);
+document.getElementById("nombreord2").addEventListener("click",()=>{
+    let vehiculos_ordenado_nombre = arrayproducto.sort((em1,em2)=>{
+       
+          if (em1.name < em2.name) {
+            return -1;
+          }
+          // a must be equal to b
+         
+        })
+    showProductsList(vehiculos_ordenado_nombre);
+}
+
+);
+//
+document.getElementById("filtrarp").addEventListener("click",()=>{
+    let preciominimo = document.getElementById("minp").value
+    let preciomaximo = document.getElementById("maxp").value
+    let productoentreprecio = arrayproducto.filter(arrayproducto => arrayproducto.cost>=preciominimo && arrayproducto.cost<=preciomaximo);
+       
+        
+       
+    showProductsList(productoentreprecio);
+})
+  
 
     
 })
@@ -84,18 +121,10 @@ document.getElementById("relevanciaalto").addEventListener("click",()=>{
 
        
 
-  
+});
 
+function limpiar(){
+    document.getElementById("minp").value= ""
+    document.getElementById("maxp").value= ""
 
-
-
-
-
-
-
-    
-   
-
-
-
-    
+}

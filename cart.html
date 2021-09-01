@@ -8,10 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
-
+  <script src="js/index.js"></script>
+  <link rel="stylesheet" href="css/btndesconectar.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="748849791590-n914us68i9hsei03qh4ueq1835dlusgj.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+   
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -41,6 +45,15 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div id="usuarioconectado"></div>
+      <button class="btndesconectar" onclick="desconectar()">Desconectar</button>
+      <script>
+
+        let usuario = JSON.parse(localStorage.getItem("usuario"));
+        document.getElementById("usuarioconectado").innerHTML+="Bienvenido: "+usuario.nombre;
+        
+       </script>
+    
     </div>
   </nav>
   <div class="container p-5">

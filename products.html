@@ -14,8 +14,12 @@
     <link href="css/styles.css" rel="stylesheet">
     <script src="js/products.js"></script>
     <script src="js/init.js"></script>
-    
-    
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/btndesconectar.css">
+    <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="748849791590-n914us68i9hsei03qh4ueq1835dlusgj.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+   
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -25,6 +29,15 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <div id="usuarioconectado"></div>
+        <button class="btndesconectar" onclick="desconectar()">Desconectar</button>
+       
+        <script>
+
+          let usuario = JSON.parse(localStorage.getItem("usuario"));
+          document.getElementById("usuarioconectado").innerHTML+="Bienvenido: "+usuario.nombre;
+          
+         </script>
       </div>
     </nav>
     <div class="text-center p-4">
@@ -32,13 +45,43 @@
       <p class="lead">Verás aquí los productos.</p>
       <input type="radio" name="options" autocomplete="off", id="precioalto"><i class="fas fa-sort-amount-down"></i>Precio.
       <input type="radio" name="options" autocomplete="off", id="preciobajo"><i class="   fas fa-sort-amount-up"></i>Precio.
-      <input type="radio" name="options" autocomplete="off", id="relevanciabajo"><i class="   fas fa-sort-amount-up"></i>Relevancia.
-      <input type="radio" name="options" autocomplete="off", id="relevanciaalto"><i class="   fas fa-sort-amount-down"></i>Relevancia.
+      <input type="radio" name="options" autocomplete="off", id="relevanciabajo"><i class="fas fa-sort-amount-up"></i>Relevancia.
+      <input type="radio" name="options" autocomplete="off", id="relevanciaalto"><i class="fas fa-sort-amount-down"></i>Relevancia.
+      <input type="radio" name="options" id="nombreord1" autocomplete="off">Z-A
+      <input type="radio" name="options" id="nombreord2" autocomplete="off">A-Z 
       
+
+      <br>
+      <br>
+        <div class="col-md-6"></div>
+          <div class="col-md-6 col-sm-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              <div class="col">
+                <p class="font-weight-normal text-right my-2">Precio.</p>
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="min." id="minp">
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="máx." id="maxp">
+              
+              </div>
+                   
+              <div class="col-3 p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="filtrarp">Filtrar</button>
+                  <button onclick="limpiar()" class="btn btn-link btn-sm" >Limpiar</button>
+                  
+                </div>
+              </div>
+            </div>
       
-    
- 
+      </div>
+       
+
     </div>
+    <input class="placeholder" type="search" id="buscarnombre" onkeyup="buscar()">
+           
     <div id="cont"></div>
    
     <footer class="text-muted bg-light">
