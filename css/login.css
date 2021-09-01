@@ -31,10 +31,10 @@ body{
 
 }
 
-.cuadro-logeo h1{
+.cuadro-logeo h1, p{
 
     margin: 0;
-    padding: 0 0 20px;
+    padding: 0 0 5px;
     text-align: center;
     font-size: 22px;
 }
@@ -52,7 +52,7 @@ body{
 .cuadro-logeo input{
 
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .cuadro-logeo input[type="text"],
@@ -62,7 +62,7 @@ body{
     border-bottom: 1px solid #fff;
     background: transparent;
     outline: none;
-    height: 40px;
+    height: 30px;
     color: #fff;
     font-size: 16px;
 }
@@ -84,3 +84,7 @@ body{
     text-align: center;
 }
 
+.cuadro-logeo .g-signin2{
+
+    padding-left: 70px;
+}

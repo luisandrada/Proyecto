@@ -83,8 +83,7 @@ document.getElementById("nombreord1").addEventListener("click",()=>{
           if (em1.name > em2.name) {
             return -1;
           }
-          // a must be equal to b
-         
+          
         })
     showProductsList(vehiculos_ordenado_nombre);
 }
@@ -93,16 +92,18 @@ document.getElementById("nombreord1").addEventListener("click",()=>{
 document.getElementById("nombreord2").addEventListener("click",()=>{
     let vehiculos_ordenado_nombre = arrayproducto.sort((em1,em2)=>{
        
+       
           if (em1.name < em2.name) {
-            return -1;
+            return  -1;
           }
-          // a must be equal to b
-         
+          
         })
     showProductsList(vehiculos_ordenado_nombre);
 }
 
 );
+
+
 //
 document.getElementById("filtrarp").addEventListener("click",()=>{
     let preciominimo = document.getElementById("minp").value
@@ -113,9 +114,23 @@ document.getElementById("filtrarp").addEventListener("click",()=>{
        
     showProductsList(productoentreprecio);
 })
-  
+/*  
+function verificacion() {
+    let textoEscrito = document.getElementById("buscarnombre").value;
+    let listafiltrada = arrayproducto.filter(function(arrayproducto) { //filter devuelve un nuevo array conteniendo los coincidentes
+        return arrayproducto.name.toLowerCase().indexOf(textoEscrito.toLowerCase()) > -1; //si lo escrito está en el array devuelve su posición
+        //si no lo está devuelve -1
+    })
+    mostrarlista(listafiltrada); // escribo la lista filtrada
+  }
 
-    
+  document.getElementById('buscarnombre').addEventListener('keyup',()=>{
+
+    verificacion();
+
+
+});
+*/
 })
 
 
