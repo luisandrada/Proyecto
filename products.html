@@ -32,12 +32,7 @@
         <div id="usuarioconectado"></div>
         <button class="btndesconectar" onclick="desconectar()">Desconectar</button>
        
-        <script>
-
-          let usuario = JSON.parse(localStorage.getItem("usuario"));
-          document.getElementById("usuarioconectado").innerHTML+="Bienvenido: "+usuario.nombre;
-          
-         </script>
+        
       </div>
     </nav>
     <div class="text-center p-4">
@@ -71,17 +66,20 @@
                 <div class="btn-group" role="group">
                   <button class="btn btn-light btn-block" id="filtrarp">Filtrar</button>
                   <button onclick="limpiar()" class="btn btn-link btn-sm" >Limpiar</button>
-                  
+                
+                
                 </div>
-              </div>
+             
+             </div>
             </div>
       
       </div>
        
 
-    </div>
+    </div> 
   
-           
+    Buscar auto por nombre: <input type="search" id="buscarnombre" ><br><br>
+               
     <div id="cont"></div>
    
     <footer class="text-muted bg-light">

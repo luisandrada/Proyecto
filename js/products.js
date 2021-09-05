@@ -114,14 +114,16 @@ document.getElementById("filtrarp").addEventListener("click",()=>{
        
     showProductsList(productoentreprecio);
 })
-/*  
+
+
+ 
 function verificacion() {
     let textoEscrito = document.getElementById("buscarnombre").value;
     let listafiltrada = arrayproducto.filter(function(arrayproducto) { //filter devuelve un nuevo array conteniendo los coincidentes
-        return arrayproducto.name.toLowerCase().indexOf(textoEscrito.toLowerCase()) > -1; //si lo escrito está en el array devuelve su posición
+        return (arrayproducto.name.toLowerCase().indexOf(textoEscrito.toLowerCase()) > -1||arrayproducto.description.toLowerCase().indexOf(textoEscrito.toLowerCase()) > -1); //si lo escrito está en el array devuelve su posición
         //si no lo está devuelve -1
     })
-    mostrarlista(listafiltrada); // escribo la lista filtrada
+    showProductsList(listafiltrada); // escribo la lista filtrada
   }
 
   document.getElementById('buscarnombre').addEventListener('keyup',()=>{
@@ -130,7 +132,7 @@ function verificacion() {
 
 
 });
-*/
+
 })
 
 
