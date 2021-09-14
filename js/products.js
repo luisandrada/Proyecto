@@ -6,7 +6,8 @@ function showProductsList(auto){
     for(vehiculos of auto){
         
 
-            htmlContentToAppend += `<div class="list-group-item list-group-item-action ">
+            htmlContentToAppend += `<a href="product-info.html" class="list-group-item list-group-item-action">
+            
             <div class="row" id="coso">
                 <div class="col-3">
                     <img src="` + vehiculos.imgSrc + `" alt="` + vehiculos.desc + `" class="img-thumbnail">
@@ -22,6 +23,8 @@ function showProductsList(auto){
                 </div>
             </div>
         </div>
+
+        </a>
         `
         }
 
@@ -145,3 +148,4 @@ function limpiar(){
     document.getElementById("maxp").value= ""
 
 }
+
