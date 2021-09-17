@@ -158,8 +158,36 @@ document.addEventListener("DOMContentLoaded", function(e){
               
                      })
        
-       
+     
+              
+            document.getElementById("estrellasalto").addEventListener("click",()=>{
+                let comentarios_ordenados_estrellas_ascendente = arrayComentarios.sort((em1,em2)=>{
+                return em1.score - em2.score
+                            
+                })
+                showComments(comentarios_ordenados_estrellas_ascendente);
+                    }
         
+                    );
+
+
+
+
+
+            document.getElementById("estrellasbajo").addEventListener("click",()=>{
+                let comentarios_ordenados_estrellas_descendente = arrayComentarios.sort((em1,em2)=>{
+                return em2.score - em1.score
+                                    
+                })
+                showComments(comentarios_ordenados_estrellas_descendente);
+                   }
+                
+                    );
+                    
+
+                   
+
+
     })
     
 })
