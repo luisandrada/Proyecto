@@ -45,6 +45,6 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
   let usuario = JSON.parse(localStorage.getItem("usuario"));
-  document.getElementById("usuarioconectado").innerHTML+="Bienvenido: "+usuario.nombre;
+  document.getElementById("dropdownMenuButton").innerHTML+="Bienvenido: "+usuario.nombre;
   
 });

@@ -2,24 +2,50 @@ var arrayinfoproducto=[];
 
 var arrayComentarios = [];
 
+var arrayAutos = [];
+
+
+
 function mostrarImagenes(array){
 
     let htmlContentToAppend = "";
 
     for(let i = 0; i < array.length; i++){
         let imagenes = array[i];
-
+if(i===0){
         htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imagenes + `" alt="">
-            </div>
-        </div>
-        `
-
-        document.getElementById("productoImagenes").innerHTML = htmlContentToAppend;
-    }
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="`+imagenes+`" class="d-block w-0" alt="">
+          </div>`
+        }
+else{
+    htmlContentToAppend += ` <div class="carousel-item">
+    <img src="`+imagenes+`" class="d-block w-0" alt="">
+  </div>`
 }
+        }
+        htmlContentToAppend += ` </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        <div>
+      </div>`
+        document.getElementById("productoImagenes").innerHTML = htmlContentToAppend;
+   
+}
+
+
+
+
+
+
 
 function showComments() {
     let htmlContentToAppend = "";
@@ -82,7 +108,7 @@ function compartirCalificacion() {
         arrayComentarios.push(nuevaCalificacion);
         document.getElementById('completar').innerHTML = "";
         document.getElementById('valoracion').innerHTML = "";
-    } else if (descripcionCalificacion !== "") {
+    } else  {
 
         nuevaCalificacion.dateTime = (fecha.getFullYear())+"-"+(fecha.getMonth()+1)+"-"+(fecha.getDate())+" "+(fecha.getHours())+":"+(fecha.getMinutes())+":"+(fecha.getSeconds())
         nuevaCalificacion.description = descripcionCalificacion;
@@ -137,7 +163,57 @@ document.addEventListener("DOMContentLoaded", function(e){
             
             mostrarImagenes(arrayinfoproducto.images);
         }
-    
+  
+//
+        getJSONData(PRODUCTS_URL).then(function(resultObj) {
+       
+           
+            if (resultObj.status === 'ok') {
+            arrayAutos = resultObj.data;
+            
+            showProductsList(arrayAutos)
+        }
+       
+        function showProductsList(auto){
+            let x = arrayinfoproducto.relatedProducts
+            let htmlContentToAppend = "";
+            for(let i=0; i<x.length;i++){
+                let vehiculos=x[i]
+        
+                    htmlContentToAppend += `<a href="product-info.html" class="list-group-item list-group-item-action">
+                    
+                    <div class="row" id="coso">
+                        <div class="col-3">
+                            <img src="` + arrayAutos[vehiculos].imgSrc + `" alt="` + arrayAutos[vehiculos].desc + `" class="img-thumbnail">
+                        </div>
+                        <div class="col">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h4 class="mb-1">`+ arrayAutos[vehiculos].name +`-`+arrayAutos[vehiculos].cost + arrayAutos[vehiculos].currency+`</h4>
+                                <small class="text-muted">` + arrayAutos[vehiculos].soldCount + ` artículos</small>
+                            </div>
+                            <div class="d-flex w-100 justify-content-between">
+                                <p class="mb-1">`+ arrayAutos[vehiculos].description +`</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                </a>
+                `
+               
+                }
+        
+                document.getElementById("proRelacionados").innerHTML = htmlContentToAppend;
+                
+            } 
+        })
+
+       
+
+  
+
+
+//
 
         getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj) {
             if (resultObj.status === 'ok') {
@@ -183,13 +259,10 @@ document.addEventListener("DOMContentLoaded", function(e){
                    }
                 
                     );
-                    
-
-                   
-
-
+                 
     })
     
 })
 
 })
+
