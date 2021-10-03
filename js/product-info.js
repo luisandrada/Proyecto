@@ -171,10 +171,10 @@ document.addEventListener("DOMContentLoaded", function(e){
             if (resultObj.status === 'ok') {
             arrayAutos = resultObj.data;
             
-            showProductsList(arrayAutos)
+            showProductsList()
         }
        
-        function showProductsList(auto){
+        function showProductsList(){
             let x = arrayinfoproducto.relatedProducts
             let htmlContentToAppend = "";
             for(let i=0; i<x.length;i++){
