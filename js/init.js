@@ -47,6 +47,12 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
   let usuario = JSON.parse(localStorage.getItem("usuario"));
+  let perfil = JSON.parse(localStorage.getItem('perfilUsuario'));
+
+  if (perfil != null){
+    document.getElementById("dropdownMenuButton").innerHTML="Bienvenido: "+perfil.nombre;
+}else{
   document.getElementById("dropdownMenuButton").innerHTML+="Bienvenido: "+usuario.nombre;
-  
+}
+
 });

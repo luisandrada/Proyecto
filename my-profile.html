@@ -3,8 +3,10 @@
 <html lang="en">
 
 <head>
+  <script src="js/index.js"></script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="js/init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
@@ -41,16 +43,39 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="my-profile.html">Ver perfil</a>
+          <a class="dropdown-item" href="#" onclick="desconectar()">Desconectar</a>
+          
+        </div>
+      </div>
     </div>
+    
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <div class="text-center p-4">
+   <h2> Mi perfil</h2>
+
   </div>
+
+  <div class="eh">
+    <div class="contenido">
+    <p class="dato"> Foto de perfil:</p> <input type="file" onchange="archivoPrevio()" placeholder=""><br><br>
+  
+              <img id="foto" src="" height="200" ><br><br>
+             
+    </div>
+    
+  <p class="dato">Nombre:</p><input type="text" id="nombre"><br><br>
+  <p class="dato">Apellido:</p><input type="text" id="apellido"><br><br>
+  <p class="dato">Edad:</p><input type="number" class="edad" id="edad"><br><br>
+  <p class="dato">Email:</p><input type="text" id="email"><br><br>
+  <p class="dato">Teléfono de contacto:</p><input type="number" id="telefono"><br><br>
+  <button onclick="guardarDatos()" id="btn">Guardar</button>
+</div>
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
@@ -76,6 +101,28 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
+  
+
+<style>
+.eh{
+  margin-left: 10%;
+}
+
+.dato{
+
+font-size: 18px;
+}
+
+.edad{
+    width: 60px;
+  }
+
+#btn{
+  background-color: cornflowerblue;
+  color: white;
+}
+</style>
+
 </body>
 
 </html>
