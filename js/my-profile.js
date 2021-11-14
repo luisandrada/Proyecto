@@ -25,6 +25,7 @@ function guardarDatos() {
             title: "Deve completar todos los datos",
             icon: 'error',
             button: 'Ok'
+            
         });
     }else{
     let perfil = {};
@@ -43,7 +44,9 @@ function guardarDatos() {
         button: 'Ok' 
         
     })
-
+    .then(() => {
+     location.href="my-profile.html"
+    });
 
 }
 }
